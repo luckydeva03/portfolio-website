@@ -2,8 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { kebabCase } from "@/utils/utils";
 import Link from "next/link";
+import { Project } from "types";
 
-function ProjectCard({ project }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <div
       className="max-w-sm mx-auto flex flex-col projects-center md:projects-start md:justify-center"
@@ -17,6 +18,7 @@ function ProjectCard({ project }) {
         <img
           className="w-full rounded-md"
           src={project.img}
+          alt={project.title}
         />
       </a>
       <div className="w-full mt-5">
@@ -49,7 +51,7 @@ function ProjectCard({ project }) {
         </div>
         <p className="text-fun-gray text-left text-sm">{project.desc}</p>
         <ul className="flex flex-wrap items-center mt-2 -ml-2 list-none">
-          {project.tags.map((tag, index) => {
+          {project.tags.map((tag: string, index: number) => {
             return (
               <li key={tag}>
                 <Link href={`/projects/tag/${kebabCase(tag)}`}>

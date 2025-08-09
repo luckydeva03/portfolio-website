@@ -2,24 +2,24 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 import {routes} from "@/data/global";
-import useDelayedRender from "use-delayed-render";
 
 export default function MobileNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
-    isMenuOpen,
-    {
-      enterDelay: 20,
-      exitDelay: 300,
-    }
-  );
+  const [isMenuMounted, setIsMenuMounted] = useState(false);
+  const [isMenuRendered, setIsMenuRendered] = useState(false);
 
   function toggleMenu() {
     if (isMenuOpen) {
-      setIsMenuOpen(false);
+      setIsMenuRendered(false);
+      setTimeout(() => {
+        setIsMenuMounted(false);
+        setIsMenuOpen(false);
+      }, 300);
       document.body.style.overflow = "";
     } else {
       setIsMenuOpen(true);
+      setIsMenuMounted(true);
+      setTimeout(() => setIsMenuRendered(true), 20);
       document.body.style.overflow = "hidden";
     }
   }
@@ -40,8 +40,9 @@ export default function MobileNavbar() {
           <Link href="/">
             <img
               className="mr-3"
-              src="/static/logos/logo_full.svg"
+              src="/static/logos/logoL.svg"
               width="160"
+              alt="Logo"
             />
           </Link>
         </li>
@@ -63,11 +64,12 @@ export default function MobileNavbar() {
           {routes.map((item, index) => {
             return (
               <li
+                key={index}
                 className="border-b border-gray-900 text-gray-100 text-sm font-semibold"
                 style={{ transitionDelay: `${150 + index * 25}ms` }}
               >
-                <Link href={item.path}>
-                  <a className="flex w-auto pb-4">{item.title}</a>
+                <Link href={item.path} className="flex w-auto pb-4">
+                  {item.title}
                 </Link>
               </li>
             );
@@ -78,7 +80,7 @@ export default function MobileNavbar() {
   );
 }
 
-function MenuIcon(props) {
+function MenuIcon(props: any) {
   return (
     <svg
       className="h-5 w-5 absolute text-gray-100"
@@ -106,7 +108,7 @@ function MenuIcon(props) {
   );
 }
 
-function CrossIcon(props) {
+function CrossIcon(props: any) {
   return (
     <svg
       className="h-5 w-5 absolute text-gray-100"

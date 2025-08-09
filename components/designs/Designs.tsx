@@ -14,6 +14,7 @@ function Designs() {
               <img
                 className="w-full h-96 hover:opacity-75 transition-opacity object-cover"
                 src={item.img}
+                alt={item.label}
               />
             </a>
           </div>

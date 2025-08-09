@@ -16,6 +16,7 @@ function Heading({ tag }: HeadingProps) {
             <img
               className="sqD w-8 sm:w-10 -top-6 -right-2 sm:-right-8 sm:-top-8 absolute"
               src="/static/doodles/hero/code.svg"
+              alt=""
             />
           </h1>
         </>
@@ -25,14 +26,14 @@ function Heading({ tag }: HeadingProps) {
           <img
             className="sqD w-10 -top-8 -right-8 absolute"
             src="/static/doodles/hero/code.svg"
+            alt=""
           />
         </h1>
       )}
       {!tag && (
         <p className="text-fun-gray text-xl sm:text-2xl max-w-3xl m-auto">
-          I've built cool apps and websites using anything from HTML to React
-          (and even PHP!). Here are some of my favorite projects over the course
-          of my journey.
+          I’m still learning, but I’ve already built some websites and apps.
+          These are some of the projects I’ve worked on as part of my learning journey.
         </p>
       )}
     </div>
