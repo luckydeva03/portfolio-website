@@ -9,9 +9,8 @@ function Navbar({ currentPage }: { currentPage: string }) {
         <Link href="/">
           <span className="font-black text-xl flex items-center">
             <img
-              className="mr-2 transform hover:rotate-360 hover:scale-75 transition-transform duration-500"
+              className="mr-2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 transform hover:rotate-360 hover:scale-75 transition-transform duration-500"
               src="/static/logos/logoL.svg"
-              width="50"
               alt="Lucky Logo"
             />
             {"Lucky".split("").map((letter, index) => {

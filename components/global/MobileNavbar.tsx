@@ -39,10 +39,9 @@ export default function MobileNavbar() {
         <li className="list-none font-bold text-lg">
           <Link href="/">
             <img
-              className="mr-3"
+              className="h-8 w-auto"
               src="/static/logos/logoL.svg"
-              width="160"
-              alt="Logo"
+              alt="Lucky Logo"
             />
           </Link>
         </li>
