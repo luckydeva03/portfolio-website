@@ -4,7 +4,7 @@ Hey there! I'm Lucky Deva and this is my personal portfolio website built using 
 
 ## 🚀 Live Demo
 
-Visit my portfolio: [luckydeva.vercel.app](https://luckydeva.vercel.app)
+Visit my portfolio: [portfolio-website.vercel.app](https://portfolio-website.vercel.app)
 
 ## 🛠️ Tech Stack
 
